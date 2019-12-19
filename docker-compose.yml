@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  upload-service:
+    container_name: upload-service
+    build: .
+    volumes:
+      - ~/.m2:/root/.m2
+    ports:
+      - 8080:8080
+    depends_on:
+      - mongo
+    environment:
+      SPRING_DATA_MONGODB_HOST: mongo
+      SPRING_DATA_MONGODB_USER: root
+      SPRING_DATA_MONGODB_PASSWORD: secret
+      SPRING_DATA_MONGODB_POST: 27017
+      SPRING_DATA_MONGODB_DATABASE: customer-images
+      SPRING_DATA_MONGODB_AUTH: admin
+
+  mongo:
+    image: mongo
+    container_name: upload-db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: secret
+    ports:
+      - 27017:27017

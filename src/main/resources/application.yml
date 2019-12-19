@@ -1,0 +1,15 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 2560000MB
+      enabled: true
+
+  data:
+    mongodb:
+      host: ${SPRING_DATA_MONGODB_HOST}
+      port: ${SPRING_DATA_MONGODB_POST}
+      database: ${SPRING_DATA_MONGODB_DATABASE}
+      username: ${SPRING_DATA_MONGODB_USER}
+      password: ${SPRING_DATA_MONGODB_PASSWORD}
+      authentication-database: ${SPRING_DATA_MONGODB_AUTH}
