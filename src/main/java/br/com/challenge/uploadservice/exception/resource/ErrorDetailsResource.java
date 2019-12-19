@@ -1,13 +1,11 @@
 package br.com.challenge.uploadservice.exception.resource;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import lombok.Getter;
 
 import java.util.Collection;
 
 import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 
-@Getter
 @JsonInclude(NON_NULL)
 public class ErrorDetailsResource {
 
@@ -18,4 +16,12 @@ public class ErrorDetailsResource {
 
     private String message;
     private Collection<String> details;
+
+    public String getMessage() {
+        return message;
+    }
+
+    public Collection<String> getDetails() {
+        return details;
+    }
 }

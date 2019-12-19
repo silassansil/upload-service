@@ -1,10 +1,7 @@
 package br.com.challenge.uploadservice.exception;
 
-import lombok.Getter;
-
 import java.util.Collection;
 
-@Getter
 abstract class AbstractException extends RuntimeException {
 
     private Collection<String> details;
@@ -12,5 +9,9 @@ abstract class AbstractException extends RuntimeException {
     AbstractException(String message, Collection<String> details) {
         super(message);
         this.details = details;
+    }
+
+    public Collection<String> getDetails() {
+        return details;
     }
 }
