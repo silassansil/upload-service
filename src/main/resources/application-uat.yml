@@ -1,10 +1,4 @@
 spring:
-  servlet:
-    multipart:
-      max-file-size: 5MB
-      max-request-size: 2560000MB
-      enabled: true
-
   data:
     mongodb:
       host: ${SPRING_DATA_MONGODB_HOST}
